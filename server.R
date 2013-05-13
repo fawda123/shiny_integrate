@@ -51,7 +51,7 @@ shinyServer(function(input, output) {
   		p1<-p1 + geom_polygon(data=plot.polys,mapping=aes(x=cord.x,y=cord.y,fill=y.col,
   			group=y.col),alpha=0.6,color=alpha('black',0.6))
   		}
-  	}
+  	
     p1<-p1 + ggtitle(txt.val) + theme(legend.position="none") 
     
     if(!input$intcum) print(p1) 
