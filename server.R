@@ -1,6 +1,11 @@
 library(shiny)
  
 # Define server logic required to generate and plot a random distribution
+
+ if (!require(shiny) | !require(ggplot2) | !require(scales) | !require(gridExtra)) {
+	  stop("This app requires the ggplot2, scales, and gridExtra packages. To install, run 'install.packages(\"name\")'.\n")
+	}
+
 shinyServer(function(input, output) {
  
   output$intPlot <- renderPlot({
